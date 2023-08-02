@@ -10,7 +10,7 @@ const Navbar = () => {
             <div className={`container ${showMenu ? 'active' : ''}`}>
                 <div className="logo ">
                    
-                    <Link to="/"> <i class="fa-regular fa-snowflake" style={{marginRight:'6px'}}></i>Weather Stack</Link>
+                    <Link to="/"> <i className="fa-regular fa-snowflake" style={{marginRight:'6px'}}></i>Weather Stack</Link>
                 </div>
                 <div className={`nav ${showMenu ? 'active' : ''}`}>
                     <Link to=" ">Pricing </Link>

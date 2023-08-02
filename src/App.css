@@ -1,24 +1,35 @@
+body {
+  background: url(../src/weather.svg), linear-gradient(135deg, #1f4e69 0, #164058 100%);
+  background-size: cover;
+  background-position: center;
+  color: #fff;
 
-.container{
+
+}
+
+.container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding-top: 12px;
- 
- 
+
+
   position: sticky;
   top: 0;
   z-index: 999;
 }
+
 .logo {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.logo >a{
+
+.logo>a {
   text-decoration: none;
   font-size: 20px;
-  color: black;
+  color: white;
 }
+
 .nav {
   display: flex;
   align-items: center;
@@ -34,13 +45,15 @@
   font-size: 16px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   padding: 5px;
-  color: black;
+  color: white;
+
 }
 
 .nav>a:hover {
- text-decoration: underline;
+  text-decoration: underline;
 
 }
+
 /* Hamburger menu */
 .hamburger {
   display: none;
@@ -78,6 +91,40 @@
   transform: translateY(-6px) rotate(45deg);
 }
 
+/* ===========================home=================== */
+.h-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  color: white;
+}
+
+.details>div {
+  background-color: rgba(255, 255, 255, .1);
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.details>a {
+  background: #f47b21;
+  padding: 10px;
+  position: relative;
+  top: 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+}
+.weather-details{
+  width: 500px;
+  height: 300px;
+  border: 4px solid #608094;
+  background: #16394c;
+  position: relative;
+  top: 40px;
+  border-radius: 20px;
+}
+
 /* ======================Media queries============================== */
 @media screen and (max-width: 768px) {
 
@@ -91,6 +138,7 @@
     margin-right: 20px;
     /* Adjust this as needed to position the hamburger menu */
   }
+
   .container.active {
     top: 10px;
     position: fixed;
