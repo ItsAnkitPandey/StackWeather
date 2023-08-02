@@ -24,15 +24,9 @@ const Home = () => {
             });
     }, [query]); // Run the effect whenever the 'query' changes
 
-
-    const { location, current } = weatherData;
-
-    // Destructure relevant data from weatherData object
-
-
-
     return (
         <div>
+        
             <div className="h-container">
                 <div className="details">
                     <h1>Real-Time & <br />Historical World<br /> Weather Data </h1>
@@ -44,17 +38,17 @@ const Home = () => {
                 <div className="weather-details">
                     {(!weatherData || !weatherData.location) ? ( <p style={{display:'flex', alignItems:'center', justifyContent:'center', width:'100%', height:'100%'}}>Loading.....</p>): (
                         <>
-                        <div className="location">  {location.name}, {location.region}, {location.country}</div>
+                        <div className="location">  {weatherData.location.name}, {weatherData.location.region}, {weatherData.location.country}</div>
                     <div className="data">
                         <div>
-                            <img src={current.weather_icons} alt="" />
-                            <p>{current.weather_descriptions[0]}</p>
+                            <img src={weatherData.current.weather_icons} alt="" />
+                            <p>{weatherData.current.weather_descriptions[0]}</p>
                         </div>
-                        <h2 className="temprature">{current.temperature}°C</h2>
+                        <h2 className="temprature">{weatherData.current.temperature}°C</h2>
                         <div>
-                            <p>Wind: {current.wind_speed} km/h</p>
-                            <p>Precip: {current.precip}</p>
-                            <p>Pressure: {current.pressure}</p>
+                            <p>Wind: {weatherData.current.wind_speed} km/h</p>
+                            <p>Precip: {weatherData.current.precip}</p>
+                            <p>Pressure: {weatherData.current.pressure}</p>
                         </div>
                     </div>
                         </>
