@@ -124,7 +124,22 @@ body {
   top: 40px;
   border-radius: 20px;
 }
-
+.location{
+  text-align: center;
+  margin-top: 8px;
+}
+.data{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 9px;
+}
+.data > div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 /* ======================Media queries============================== */
 @media screen and (max-width: 768px) {
 
