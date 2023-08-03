@@ -175,7 +175,6 @@ body {
     display: flex;
     flex-direction: column;
     margin-right: 20px;
-    /* Adjust this as needed to position the hamburger menu */
   }
 
   .container.active {
