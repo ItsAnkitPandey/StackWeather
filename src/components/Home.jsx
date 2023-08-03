@@ -5,11 +5,11 @@ import axios from 'axios';
 
 const Home = () => {
     const [weatherData, setWeatherData] = useState(null);
-    const apiKey = "9faffac7c31af858ba42b0d533fe8ba4";
-    const [query, setQuery] = useState("");// Replace with the desired location 
+    const [query, setQuery] = useState("");
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const apiKey = "9faffac7c31af858ba42b0d533fe8ba4";
                 const encodedQuery = encodeURIComponent(query);
                 // Fetch weather data from Weatherstack API
                 const response = await axios.get(`http://api.weatherstack.com/current`, {
@@ -24,7 +24,7 @@ const Home = () => {
             }
         };
         fetchData();
-    },  [query]); // Run the effect whenever the 'query' changes
+    }, [query]); // Run the effect whenever the 'query' changes
     const handleInputChange = (event) => {
         setQuery(event.target.value);
     };
@@ -44,7 +44,9 @@ const Home = () => {
 
                 </div>
                 <div className="weather-details">
-                    {(!weatherData || !weatherData.location) ? (<p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>Loading.....</p>) : (
+                    {query === "" ? (
+                        <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>Enter Your Location</p>
+                    ) : (!weatherData || !weatherData.location) ? (<p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>Loading.....</p>) : (
                         <>
                             <div className="location">  {weatherData.location.name},{weatherData.location.country}</div>
                             <div className="data">

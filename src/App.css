@@ -160,6 +160,9 @@ body {
   align-items: center;
   justify-content: center;
 }
+.data>div>img{
+  border-radius: 4px;
+}
 .forecast{
   display: flex;
   flex-direction: column;
