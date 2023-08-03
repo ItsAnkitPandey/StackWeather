@@ -6,24 +6,25 @@ import axios from 'axios';
 const Home = () => {
     const [weatherData, setWeatherData] = useState(null);
     const apiKey = "9faffac7c31af858ba42b0d533fe8ba4";
-    const [query, setQuery] = useState("New Delhi");// Replace with the desired location 
+    const [query, setQuery] = useState("");// Replace with the desired location 
     useEffect(() => {
-        const encodedQuery = encodeURIComponent(query);
-        // Fetch weather data from Weatherstack API
-        axios
-            .get(`https://api.weatherstack.com/current`, {
-                params: {
-                    access_key: apiKey,
-                    query: encodedQuery,
-                },
-            })
-            .then((response) => {
+        const fetchData = async () => {
+            try {
+                const encodedQuery = encodeURIComponent(query);
+                // Fetch weather data from Weatherstack API
+                const response = await axios.get(`http://api.weatherstack.com/current`, {
+                    params: {
+                        access_key: apiKey,
+                        query: encodedQuery,
+                    },
+                });
                 setWeatherData(response.data);
-            })
-            .catch((error) => {
+            } catch (error) {
                 console.error("Error fetching weather data:", error);
-            });
-    }, [query]); // Run the effect whenever the 'query' changes
+            }
+        };
+        fetchData();
+    },  [query]); // Run the effect whenever the 'query' changes
     const handleInputChange = (event) => {
         setQuery(event.target.value);
     };
