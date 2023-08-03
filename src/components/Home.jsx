@@ -11,7 +11,7 @@ const Home = () => {
         const encodedQuery = encodeURIComponent(query);
         // Fetch weather data from Weatherstack API
         axios
-            .get(`http://api.weatherstack.com/current`, {
+            .get(`https://api.weatherstack.com/current`, {
                 params: {
                     access_key: apiKey,
                     query: encodedQuery,
