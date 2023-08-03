@@ -58,6 +58,9 @@ const Home = () => {
                                     <p>Pressure: {weatherData.current.pressure}</p>
                                 </div>
                             </div>
+                            <div className="forecast">
+                                
+                            </div>
                         </>
                     )}
 
