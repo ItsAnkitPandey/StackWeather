@@ -38,7 +38,7 @@ const Home = () => {
                     </form>
                     <h1>Real-Time & <br />Historical World<br /> Weather Data </h1>
                     <p>Retrieve instant, accurate weather<br /> information forany location in the world in </p>
-                    <div>Hello World </div>
+                    <div > <i class="fa-solid fa-temperature-low" style={{marginRight:'5px'}}></i>Sunshine is delicious & Rain is refreshing. </div>
                     <Link to=" ">Stack Weather</Link>
 
                 </div>
