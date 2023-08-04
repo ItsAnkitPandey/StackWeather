@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import axios from 'axios';
+import axios from 'axios'
+import ScrollReveal from 'scrollreveal'
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
                 const apiKey = "9faffac7c31af858ba42b0d533fe8ba4";
                 const encodedQuery = encodeURIComponent(query);
                 // Fetch weather data from Weatherstack API
-                const response = await axios.get(`https://api.weatherstack.com/current`, {
+                const response = await axios.get(`http://api.weatherstack.com/current`, {
                     params: {
                         access_key: apiKey,
                         query: encodedQuery,
@@ -24,10 +25,22 @@ const Home = () => {
             }
         };
         fetchData();
+        /*===== SCROLL REVEAL ANIMATION =====*/
+        const sr = ScrollReveal({
+            origin: 'top',
+            distance: '60px',
+            duration: 2000,
+            delay: 200,
+            reset: true
+        });
+        sr.reveal('.h-container .', { })
+        sr.reveal('.details, .weather-details', {delay:400})
+        sr.reveal('.fa-solid, .input', {delay:600})
     }, [query]); // Run the effect whenever the 'query' changes
     const handleInputChange = (event) => {
         setQuery(event.target.value);
     };
+
 
     return (
         <div>
