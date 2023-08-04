@@ -25,18 +25,20 @@ const Home = () => {
             }
         };
         fetchData();
+
         /*===== SCROLL REVEAL ANIMATION =====*/
         const sr = ScrollReveal({
             origin: 'top',
             distance: '60px',
             duration: 2000,
             delay: 200,
-            reset: true
+            // reset: true
         });
-        sr.reveal('.h-container .', { })
-        sr.reveal('.details, .weather-details', {delay:400})
-        sr.reveal('.fa-solid, .input', {delay:600})
+        sr.reveal('.h-container .', { delay: 400 })
+        sr.reveal('.details, .weather-details', { delay: 400 })
+        sr.reveal('.fa-solid, .input', { delay: 600 })
     }, [query]); // Run the effect whenever the 'query' changes
+
     const handleInputChange = (event) => {
         setQuery(event.target.value);
     };
