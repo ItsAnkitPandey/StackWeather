@@ -6,7 +6,7 @@ import ScrollReveal from 'scrollreveal'
 
 const Home = () => {
     const [weatherData, setWeatherData] = useState(null);
-    const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("New Delhi");
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -36,7 +36,8 @@ const Home = () => {
         });
         sr.reveal('.h-container .', { delay: 400 })
         sr.reveal('.details, .weather-details', { delay: 400 })
-        sr.reveal('.fa-solid, .input', { delay: 600 })
+        sr.reveal(' .input', { delay: 600 })
+        sr.reveal('.fa-solid', {interval: 200})
     }, [query]); // Run the effect whenever the 'query' changes
 
     const handleInputChange = (event) => {
