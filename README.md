@@ -1,4 +1,4 @@
 # Getting Started with ItsAnkitPandey
 
-## Live On [Weather Stack](https://weatherstack.netlify.app).
+## Live On [Weather Stack](https://stackweather.netlify.app).
 
